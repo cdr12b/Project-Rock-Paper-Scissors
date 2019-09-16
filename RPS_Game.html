@@ -26,39 +26,63 @@
           return winner[1];
           break;
         case "Paper":
-          return winner[2] += " Paper beats Rock";
+          return winner[2];
           break;
         case "Scissors":
-          return winner[0] += " Rock beats Scissors";
+          return winner[0];
         }
     } else if (playerSelection.startsWith("p") || playerSelection.startsWith("P")) {
         switch(computerSelection) {
         case "Rock":
-          return winner[0] += " Paper beats Rock";
+          return winner[0];
           break;
         case "Paper":
           return winner[1];
           break;
         case "Scissors":
-          return winner[2] += " Scissors beats Paper";
+          return winner[2];
         }
     } else if (playerSelection.startsWith("s") || playerSelection.startsWith("S")) {
         switch(computerSelection) {
         case "Rock":
-          return winner[2] += " Rock beats Scissors";
+          return winner[2];
           break;
         case "Paper":
-          return winner[0] += " Scissors beats Paper";
+          return winner[0];
           break;
         case "Scissors":
           return winner[1];
         }
     }
   }
+  let win = 0;
+  let tie = 0;
+  let lose = 0;
   
-  const playerSelection = 'rock';
-  const computerSelection = computerPlay();
-  console.log(rpsRound(playerSelection, computerSelection));
+  function game() {
+    for ( i = 0; i < 5; i++) {
+      playerSelection = window.prompt('Choose Rock, Paper, or Scissors');
+      playerScore = rpsRound(playerSelection,computerSelection);
+      
+      switch (playerScore) {
+        case "You Win!":
+          return win += 1;
+          console.log("You Win!");
+          break;
+        case "You Lose":
+          return lose += 1;
+          console.log("You Lose");
+          break;
+        case "Tie":
+          return tie += 1;
+          console.log("Tie");
+      }
+    }
+    if ( win > lose && win > tie) {
+      console.log(
+    }
+  }
+  console.log(
 </script>
 <body>
 </body>
