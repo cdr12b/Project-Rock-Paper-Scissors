@@ -6,19 +6,54 @@
     let choice = ["Rock","Paper","Scissors"];
     let num = Math.floor(Math.random()*3)+1);
     switch(num) {
-    case 1:
-      return choice[0];
-      break;
-    case 2:
-      return choice[1];
-      break;
-    case 3:
-      return choice[2];
-    }
+      case 1:
+        return choice[0];
+        break;
+      case 2:
+        return choice[1];
+        break;
+      case 3:
+        return choice[2];
+      }
   }
   
+  var winner = ["You Win!","Tie","You Lose"];
+  
   function rpsRound(playerSelection,computerSelection) {
-    if (playerSelection == "
+    if (playerSelection.startsWith("r") || playerSelection.startsWith("R")) {
+      switch(computerSelection) {
+        case "Rock":
+          return winner[1];
+          break;
+        case "Paper":
+          return winner[2] += " Paper beats Rock";
+          break;
+        case "Scissors":
+          return winner[0] += " Rock beats Scissors";
+        }
+    } else if (playerSelection.startsWith("p") || playerSelection.startsWith("P")) {
+        switch(computerSelection) {
+        case "Rock":
+          return winner[0] += " Paper beats Rock";
+          break;
+        case "Paper":
+          return winner[1];
+          break;
+        case "Scissors":
+          return winner[2] += " Scissors beats Paper";
+        }
+    } else if (playerSelection.startsWith("s") || playerSelection.startsWith("S")) {
+        switch(computerSelection) {
+        case "Rock":
+          return winner[2] += " Rock beats Scissors";
+          break;
+        case "Paper":
+          return winner[0] += " Scissors beats Paper";
+          break;
+        case "Scissors":
+          return winner[1];
+        }
+    }
   }
 </script>
 <body>
