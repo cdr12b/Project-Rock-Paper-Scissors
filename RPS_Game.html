@@ -65,7 +65,7 @@
       playerSelection = window.prompt('Choose Rock, Paper, or Scissors');
       computerSelection = computerPlay();
       playerScore = rpsRound(playerSelection,computerSelection);
-      console.log("player chose " + playerSelection + " ,computer chose " + computerSelection);
+      console.log("player chose " + playerSelection + ", computer chose " + computerSelection);
       switch (playerScore) {
         case "You Win!":
           return win += 1;
@@ -75,22 +75,21 @@
           return lose += 1;
           console.log("You Lose");
           break;
-        case "Tie":
+        default:
           return tie += 1;
           console.log("Tie");
-          continue;
       }
     }
-      if (win > lose && win > tie) {
-        console.log("You win the game");
-      } else if (lose > win && lose > tie) {
-        console.log("You lose the game");
-      }else {
-        console.log("The game is a tie");
-      }
   }
-  
   console.log(game());
+  
+  if (win > lose && win > tie) {
+    console.log("You win the game");
+  } else if (lose > win && lose > tie) {
+    console.log("You lose the game");
+  }else {
+    console.log("The game is a tie");
+  }
 </script>
 <body>
 </body>
