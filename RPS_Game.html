@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>Project for RPS game</head>
 <script>
@@ -59,35 +59,40 @@
   let win = 0;
   let tie = 0;
   let lose = 0;
+  let count = 0;
   
   function game() {
-    for ( i = 0; i < 5; i++) {
+    do {
       playerSelection = window.prompt('Choose Rock, Paper, or Scissors');
       computerSelection = computerPlay();
       playerScore = rpsRound(playerSelection,computerSelection);
       console.log("player chose " + playerSelection + ", computer chose " + computerSelection);
       switch (playerScore) {
         case "You Win!":
-          return win += 1;
           console.log("You Win!");
+          win += 1;
           break;
         case "You Lose":
-          return lose += 1;
-          console.log("You Lose");
-          break;
+         console.log("You Lose"); 
+         lose += 1;
+         break;
         default:
-          return tie += 1;
-          console.log("Tie");
+         console.log("Tie") 
+         tie += 1;
       }
-    }
+      
+      count += 1;
+    } 
+    while( count < 5);
   }
+  
   console.log(game());
   
   if (win > lose && win > tie) {
     console.log("You win the game");
   } else if (lose > win && lose > tie) {
     console.log("You lose the game");
-  }else {
+  }else if ( tie > win && tie > lose){
     console.log("The game is a tie");
   }
 </script>
